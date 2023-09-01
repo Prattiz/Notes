@@ -1,13 +1,15 @@
-import { Teste } from "./style"
-import { Button } from "../components/Buttons"
+import { Conteiner } from "./style";
+import { Button } from "../components/Buttons";
+import { Header } from "../components/Header";
 
 export function App(){
     return(
-        <Teste>
-            <h1>Hello World!!</h1>
-            <Button title="my button" loading/>
-            <Button title="my button"/>
-        </Teste>
+        <Conteiner>
+            <Header />
+            
+
+            <Button title="voltar"/>
+        </Conteiner>
         
     )
 }
