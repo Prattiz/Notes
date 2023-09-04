@@ -9,8 +9,6 @@ export const Conteiner = styled.header`
     display: flex;
     justify-content: space-between;
     padding:0 80px;
-
-
 `
 
 export const Profile = styled.div`
@@ -41,5 +39,16 @@ export const Profile = styled.div`
             color:${({ theme }) => theme.COLORS.WHITE};
         }
     }
+`
 
+export const Logout =  styled.button`
+
+    border:none;
+    background: none;
+
+    >svg{
+        color:${({theme}) => theme.COLORS.GRAY_100};
+        font-size: 30px;
+    }
+    
 `
