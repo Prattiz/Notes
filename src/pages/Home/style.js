@@ -54,13 +54,16 @@ export const Menu = styled.ul`
 export const Content = styled.div`
 
     grid-area: content;
+    padding: 0 64px;
+    overflow-y: auto;
+
 `;
 
 export const NewNote = styled.button`
 
     grid-area: newnotes;
     height: 80px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     border: none;
