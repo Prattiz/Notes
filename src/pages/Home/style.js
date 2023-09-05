@@ -35,6 +35,7 @@ export const Brand = styled.div`
 export const Search = styled.div`
 
     grid-area: search;
+    padding: 64px 64px 0;
 
 `;
 export const Menu = styled.ul`
