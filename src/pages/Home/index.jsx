@@ -17,9 +17,9 @@ export function Home() {
 
             <Menu>
                 
-                <li><ButtonText title="Todos"/></li>
-                <li><ButtonText title="Todos"/></li>
-                <li><ButtonText title="Todos"/></li>
+                <li><ButtonText title="Ativo" /></li>
+                <li><ButtonText title="Teste"/></li>
+                <li><ButtonText title="Teste"/></li>
                 
                 
                 
@@ -44,7 +44,7 @@ export function Home() {
 
             </Content>
             
-            <NewNote><FiPlus /> Criar Nota</NewNote>
+            <NewNote to="/new"><FiPlus /> Criar Nota</NewNote>
         </Conteiner>
     )
 }
