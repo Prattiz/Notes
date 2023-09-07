@@ -11,6 +11,14 @@ export const Container = styled.div`
     border-radius: 10px;
     padding-right:16px;
 
+    .button-del{
+        color: ${({theme}) => theme.COLORS.RED};
+    }
+
+    .button-add{
+        color: ${({theme}) => theme.COLORS.ORANGE};
+    }
+
     >button{
         border: none;
         background: none;
