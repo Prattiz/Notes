@@ -24,7 +24,7 @@ export const Form = styled.form`
 
 
         >a{
-            font-size: 20px;
+            font-size: 16px;
             color:${({theme}) => theme.COLORS.ORANGE};
             text-decoration: none;
         }
