@@ -1,6 +1,6 @@
 # Projeto Notes
 
-O Projeto Notes é uma aplicação web feita com REACT.js, JavaScript e HTML/CSS. O projeto de uma pagina onde permite aos usuários criar e gerenciar suas notas de maneira eficiente e organizada. Seja para anotar ideias rápidas, listas de tarefas ou pensamentos importantes, o Projeto Notes oferece uma plataforma prática para manter suas informações sempre à mão.
+O Projeto Notes é uma aplicação web feita com React.js, Node.js, JavaScript, SQL, e HTML/CSS. O projeto de uma pagina onde permite aos usuários criar e gerenciar suas notas de maneira eficiente e organizada. Seja para anotar ideias rápidas, listas de tarefas ou pensamentos importantes, o Projeto Notes oferece uma plataforma prática para manter suas informações sempre à mão.
 
 # Recursos Principais
 
