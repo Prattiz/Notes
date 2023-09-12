@@ -3,13 +3,20 @@ import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { FiMail, FiLock} from "react-icons/fi";
 import { Button } from "../../components/Buttons";
-import { useContext } from "react";
-import { useAuth  } from "../../hooks/auth"
+import { useState } from "react";
+
+
+import { useAuth  } from "../../hooks/auth";
 
 export function SignIn(){
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const { signIn } = useAuth();
+    
+    function handleSignIn(){
+        signIn({email, password})
 
-    const data = useAuth();
-    console.log(data)
+    }
 
 
     return(
@@ -23,15 +30,17 @@ export function SignIn(){
                 placeholder="E-mail" 
                 type="text"
                 icon={FiMail}
+                onChange={e => setEmail(e.target.value)}
                 />
 
                 <Input 
                 placeholder="Senha" 
                 type="password"
                 icon={FiLock}
+                onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Entrar" />
+                <Button title="Entrar" onClick={handleSignIn} />
 
                 <Link to="/register">Criar Conta</Link>
             </Form>
