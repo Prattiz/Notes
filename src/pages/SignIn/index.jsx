@@ -1,20 +1,23 @@
 import { Background, Container, Form } from "./style";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { FiMail, FiLock} from "react-icons/fi";
 import { Button } from "../../components/Buttons";
 import { useState } from "react";
-
-
-import { useAuth  } from "../../hooks/auth";
+import { useAuth } from "../../hooks/auth";
 
 export function SignIn(){
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const { signIn } = useAuth();
+    const navigate = useNavigate()
+    const { signIn } = useAuth()
     
     function handleSignIn(){
-        signIn({email, password})
+       
+        signIn({ email, password })
+        navigate("/")
+        
+
 
     }
 
