@@ -69,7 +69,7 @@ export const NewNote = styled(Link)`
     justify-content: center;
     border: none;
     background-color: ${({theme}) => theme.COLORS.ORANGE};
-    color: ${({theme}) => theme.COLORS.WHITE};
+    color: ${({theme}) => theme.COLORS.BACKGROUND_900};
     text-decoration: none;
     
 
