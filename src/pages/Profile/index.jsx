@@ -1,10 +1,13 @@
 import { Container, Form, Avatar} from "./styles";
 import { useState } from "react";
+import  avatarPlaceH  from "../../../assets/user.svg";
 import { useAuth } from "../../hooks/auth";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Buttons";
 import { Link } from "react-router-dom";
+import { api } from "../../services/api"
+
 
 export function Profile(){
     const { user, updateProfile } = useAuth();
@@ -12,12 +15,28 @@ export function Profile(){
     const [ password, setPassword ] = useState();
     const [ newPass, setNew ] = useState();
     const [ email, setEmail ] = useState(user.email);
-    const [ avatar, setAvatar] = useState(null)
+    const avatarURL = user.avatar ? `${ api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceH;
+    const [ avatar, setAvatar] = useState(avatarURL);
+    const [ avatarFile, setAvatarFile] = useState(null);
+ 
+
 
     async function handleUpdate(){
         const user = { name, email, password: newPass, oldPassword: password,}
-        await updateProfile({ user })
+        await updateProfile({ user, avatarFile })
     }
+
+
+    function handleChangeAvatar(event){
+        const file = event.target.files[0];
+        setAvatarFile(file)
+
+        const imagePreview = URL.createObjectURL(file);
+        setAvatar(imagePreview)
+    }
+
+
+    
     
     return(
         <Container>
@@ -30,7 +49,7 @@ export function Profile(){
             <Form>
                 <Avatar>
                     <img 
-                    src={avatar} 
+                    src={avatarURL} 
                     alt="Foto do Usuário" 
                     />
 
@@ -40,6 +59,7 @@ export function Profile(){
                     <input 
                     id="avatar"
                     type="file"
+                    onChange={handleChangeAvatar}
                     />
 
                 </Avatar>
