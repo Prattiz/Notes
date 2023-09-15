@@ -19,6 +19,11 @@ export function New(){
         setNewL("")
     }
 
+    function handleRemoveLink(deleted){
+        setLinks(prevState => prevState.filter(link => link !== deleted))
+
+    }
+
     return(
         <Container>
             <Header />
@@ -33,13 +38,13 @@ export function New(){
                     <Textarea placeholder="Observaçôes"/>    
 
                     <Section title="Links Úteis">
-                        
+
                         {
                           links.map((link, index) => (
                             <NoteItem
                               key={String(index)}
                               value={link}
-                              onClick={() => { }}
+                              onClick={() => handleRemoveLink(link)}
                             />     
                                 ))
                         }
