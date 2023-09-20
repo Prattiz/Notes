@@ -5,7 +5,7 @@ import { useAuth } from "../../hooks/auth";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Buttons";
-import { Link } from "react-router-dom";
+import { ButtonText } from "../../components/ButtonT";
 import { api } from "../../services/api"
 
 
@@ -35,15 +35,14 @@ export function Profile(){
         setAvatar(imagePreview)
     }
 
+    function backButton(){
+        navigate(-1)
+      }
 
-    
-    
     return(
         <Container>
             <header>
-                <Link to="/">
-                    <FiArrowLeft />
-                </Link>
+                <ButtonText title={<FiArrowLeft />} onClick={backButton}/>
             </header>
 
             <Form>

@@ -35,10 +35,12 @@ export const Form = styled.form`
         margin-bottom: 35px;
 
 
-        >a{
+        button{
             font-size: 16px;
             color:${({theme}) => theme.COLORS.ORANGE};
-            text-decoration: none;
+            margin-top: 8px;
+            
+            
         }
     }
 `

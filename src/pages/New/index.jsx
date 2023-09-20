@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { ButtonText } from "../../components/ButtonT";
 import { useNavigate } from 'react-router-dom';
 import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
@@ -58,9 +58,12 @@ export function New() {
     })
     
     alert("Nota criada com sucesso!")
-    navigate("/")
+    navigate(-1)
   }
 
+  function backButton(){
+    navigate(-1)
+  }
 
   return (
     <Container>
@@ -70,7 +73,7 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <Link to="/">voltar</Link>
+            <ButtonText title="Voltar" onClick={backButton}  />
           </header>
 
           <Input
@@ -94,7 +97,7 @@ export function New() {
               ))
             }
             <NoteItem
-              isNew
+              $isNew
               placeholder="Novo link"
               value={newLink}
               onChange={e => setNewLink(e.target.value)}
@@ -115,7 +118,7 @@ export function New() {
               }
 
               <NoteItem
-                isNew
+                $isNew
                 placeholder="Nova tag"
                 onChange={e => setNewTag(e.target.value)}
                 value={newTag}

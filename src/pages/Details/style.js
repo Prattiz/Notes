@@ -39,6 +39,16 @@ export const Content = styled.div`
         margin-top: 16px;
         text-align: justify;
     }
+`
 
+export const Links = styled.ul`
+  list-style-type: none;
 
+  > li {
+    margin-top: 12px;
+    
+    a {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+  }
 `
