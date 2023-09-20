@@ -1,12 +1,12 @@
 import { Container, Form, Avatar} from "./styles";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import  avatarPlaceH  from "../../../assets/user.svg";
 import { useAuth } from "../../hooks/auth";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Buttons";
-import { ButtonText } from "../../components/ButtonT";
-import { api } from "../../services/api"
+import { api } from "../../services/api";
 
 
 export function Profile(){
@@ -18,12 +18,17 @@ export function Profile(){
     const avatarURL = user.avatar ? `${ api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceH;
     const [ avatar, setAvatar] = useState(avatarURL);
     const [ avatarFile, setAvatarFile] = useState(null);
+    const navigate = useNavigate()
  
 
+    function backButton(){
+        navigate(-1)
+    }
 
     async function handleUpdate(){
-        const user = { name, email, password: newPass, oldPassword: password,}
-        await updateProfile({ user, avatarFile })
+        const updated = { name, email, password: newPass, oldPassword: password,}
+        const userUpdated = Object.assign(user, updated)
+        await updateProfile({ user: userUpdated, avatarFile })
     }
 
 
@@ -37,12 +42,15 @@ export function Profile(){
 
     function backButton(){
         navigate(-1)
-      }
+    }
 
     return(
         <Container>
             <header>
-                <ButtonText title={<FiArrowLeft />} onClick={backButton}/>
+                <button type="button" 
+                onClick={backButton}>
+                    <FiArrowLeft/>
+                </button>
             </header>
 
             <Form>
