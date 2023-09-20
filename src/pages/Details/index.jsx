@@ -25,11 +25,8 @@ export function App(){
         if(confirm){
             await api.delete(`/notes/${params.id}`)
             navigate(-1)
-        }
-
-        
+        }   
     }
-
 
     useEffect(() => {
         async function fetchNote(){
@@ -88,13 +85,10 @@ export function App(){
                             </Section>
                         }
                         
-                        
-
                         <Button title="voltar" onClick={handleBackButton}/>
                     </Content>
                 </main>
             }   
-        </Container>
-        
+        </Container>     
     )
 }

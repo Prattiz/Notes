@@ -37,13 +37,14 @@ export const Avatar = styled.div`
 
     position: relative;
     margin: -124px auto 32px;
-    width: 186px;
-    height: 186px;
+    width: 190px;
+    height: 190px;
     
     > img{
         width: 186px;
         height: 186px;
         border-radius: 50%;
+        
     }
 
     > label{

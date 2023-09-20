@@ -13,12 +13,8 @@ export function SignIn(){
     const { signIn } = useAuth()
     
     function handleSignIn(){
-       
         signIn({ email, password })
-        navigate(-1)
-        
-
-
+        navigate("/")
     }
 
 
@@ -47,7 +43,6 @@ export function SignIn(){
 
                 <Link to="/register">Criar Conta</Link>
             </Form>
-
             <Background />
         </Container>
     )
